@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Harkkaportaali – Ilmoitukset</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Harkkaportaali</div>
+        <ul>
+            <li><a href="index.html">ETUSIVU</a></li>
+            <li><a href="ilmoitukset.html">ILMOITUKSET</a></li>
+            <li><a href="palaute.html">PALAUTE</a></li>
+            <li><a href="tietoa.html">TIETOA</a></li>
+            <li><a href="kirjaudu.html" class="login-btn">KIRJAUDU</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section id="jobs">
+        <h2>Ilmoitukset</h2>
+        <p>
+            Valitse haluatko tarkastella yritysten tarjoamia harjoittelupaikkoja
+            vai opiskelijoiden tekemiä ilmoituksia.
+        </p>
+
+        <!-- NÄKYMÄN VAIHTONAPIT -->
+        <div class="job-toggle">
+            <button id="showJobs" class="active">Työpaikkailmoitukset</button>
+            <button id="showStudents">Opiskelijailmoitukset</button>
+        </div>
+
+        <!-- Hakukenttä + LISÄTTY NAPPULA -->
+        <div class="job-search">
+            <input type="text" id="jobSearch" placeholder="Hae avainsanoilla...">
+            <select id="fieldFilter" class="filter-select">
+                <option value="kaikki">ALAT</option>
+                <option value="it">IT ja ohjelmistokehitys</option>
+                <option value="markkinointi">Markkinointi ja viestintä</option>
+                <option value="talous">Taloushallinto</option>
+                <option value="hoiva">Sosiaali‑ ja terveysala</option>
+            </select>
+        </div>
+
+        <!-- TYÖPAIKKAILMOITUKSET -->
+        <div id="jobList" class="job-section">
+
+            <div class="job-card" data-keywords="markkinointi some viestintä vantaa">
+                <h3>Markkinoinnin harjoittelija</h3>
+                <p><strong>Yritys:</strong> Luova Studio Oy</p>
+                <p><strong>Sijainti:</strong> Vantaa</p>
+                <p><strong>Alkaa:</strong> 09/2026 · <strong>Kesto:</strong> 4 kk</p>
+
+                <h4>Odotettu osaaminen</h4>
+                <ul>
+                    <li>Sisällöntuotanto</li>
+                    <li>Sosiaalinen media</li>
+                    <li>Canva tai vastaava työkalu</li>
+                </ul>
+
+                <h4>Kuvaus</h4>
+                <p>
+                    Haemme luovaa ja oma-aloitteista harjoittelijaa tukemaan markkinointitiimiämme.
+                    Pääset suunnittelemaan ja toteuttamaan kampanjoita sekä oppimaan analytiikan perusteita.
+                </p>
+            </div>
+
+            <div class="job-card" data-keywords="frontend react javascript helsinki">
+                <h3>Frontend-harjoittelija</h3>
+                <p><strong>Yritys:</strong> TechBridge Solutions</p>
+                <p><strong>Sijainti:</strong> Helsinki</p>
+                <p><strong>Alkaa:</strong> 01/2027 · <strong>Kesto:</strong> 5–6 kk</p>
+
+                <h4>Odotettu osaaminen</h4>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>UI/UX-perusteet</li>
+                </ul>
+
+                <h4>Kuvaus</h4>
+                <p>
+                    Pääset työskentelemään oikeissa asiakasprojekteissa kokeneiden kehittäjien kanssa.
+                    Harjoittelu sopii opiskelijalle, joka haluaa syventää osaamistaan modernissa web-kehityksessä.
+                </p>
+            </div>
+
+            <div class="job-card" data-keywords="talous hallinto kirjanpito vantaa">
+                <h3>Taloushallinnon harjoittelija</h3>
+                <p><strong>Yritys:</strong> Kaupunki Services</p>
+                <p><strong>Sijainti:</strong> Vantaa</p>
+                <p><strong>Alkaa:</strong> 05/2026 · <strong>Kesto:</strong> 3 kk</p>
+
+                <h4>Odotettu osaaminen</h4>
+                <ul>
+                    <li>Excel ja raportointi</li>
+                    <li>Kirjanpidon perusteet</li>
+                    <li>Huolellinen työote</li>
+                </ul>
+
+                <h4>Kuvaus</h4>
+                <p>
+                    Tehtäviin kuuluu talousraportointia, laskujen käsittelyä ja tiimin avustavia tehtäviä.
+                    Sopii opiskelijalle, joka haluaa käytännön kokemusta taloushallinnon arjesta.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- OPISKELIJA-ILMOITUKSET -->
+        <div id="studentList" class="job-section" style="display:none;">
+
+            <div class="job-card" data-keywords="opiskelija markkinointi sisällöntuotanto pk-seutu">
+                <h3>Aino Laine – opiskelijan ilmoitus</h3>
+                <p><strong>Opintojen vaihe:</strong> 3. vuoden tradenomiopiskelija</p>
+                <p><strong>Etsii:</strong> Markkinoinnin harjoittelua</p>
+                <p><strong>Sijainti:</strong> PK-seutu / etä</p>
+                <p><strong>Aloitus:</strong> 08/2026</p>
+
+                <h4>Osaaminen</h4>
+                <ul>
+                    <li>Sisällöntuotanto</li>
+                    <li>Sosiaalinen media</li>
+                    <li>Canva & Figma</li>
+                    <li>Perusanalytiikka</li>
+                </ul>
+
+                <h4>Lisätiedot</h4>
+                <p>
+                    Etsin harjoittelua, jossa pääsen toteuttamaan kampanjoita ja kehittämään
+                    datalähtöistä markkinointiosaamistani.
+                </p>
+            </div>
+
+            <div class="job-card" data-keywords="opiskelija ohjelmistokehitys frontend react helsinki">
+                <h3>Leo Mäkinen – opiskelijan ilmoitus</h3>
+                <p><strong>Opintojen vaihe:</strong> 2. vuoden tietojenkäsittelyn opiskelija</p>
+                <p><strong>Etsii:</strong> Frontend-harjoittelua</p>
+                <p><strong>Sijainti:</strong> Helsinki / etä</p>
+                <p><strong>Aloitus:</strong> 01/2027</p>
+
+                <h4>Osaaminen</h4>
+                <ul>
+                    <li>JavaScript & React</li>
+                    <li>HTML/CSS</li>
+                    <li>UI/UX-perusteet</li>
+                    <li>Git & GitHub</li>
+                </ul>
+
+                <h4>Lisätiedot</h4>
+                <p>
+                    Haluan päästä työskentelemään oikeiden projektien parissa ja kehittämään
+                    modernia frontend-osaamistani.
+                </p>
+            </div>
+
+            <div class="job-card" data-keywords="opiskelija taloushallinto excel vantaa">
+                <h3>Sara Virtanen – opiskelijan ilmoitus</h3>
+                <p><strong>Opintojen vaihe:</strong> 2. vuoden liiketalouden opiskelija</p>
+                <p><strong>Etsii:</strong> Taloushallinnon harjoittelua</p>
+                <p><strong>Sijainti:</strong> Vantaa / PK-seutu</p>
+                <p><strong>Aloitus:</strong> 05/2026</p>
+
+                <h4>Osaaminen</h4>
+                <ul>
+                    <li>Excel ja raportointi</li>
+                    <li>Kirjanpidon perusteet</li>
+                    <li>Tarkka ja huolellinen työote</li>
+                </ul>
+
+                <h4>Lisätiedot</h4>
+                <p>
+                    Etsin harjoittelua, jossa pääsen soveltamaan taloushallinnon oppeja käytännössä.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Harkkaportaali – Konseptiprototyyppi</p>
+</footer>
+
+<script>
+/* Vaihda työpaikka- ja opiskelijailmoitusten välillä */
+document.getElementById("showJobs").addEventListener("click", function () {
+    document.getElementById("jobList").style.display = "block";
+    document.getElementById("studentList").style.display = "none";
+
+    this.classList.add("active");
+    document.getElementById("showStudents").classList.remove("active");
+});
+
+document.getElementById("showStudents").addEventListener("click", function () {
+    document.getElementById("jobList").style.display = "none";
+    document.getElementById("studentList").style.display = "block";
+
+    this.classList.add("active");
+    document.getElementById("showJobs").classList.remove("active");
+});
+
+/* Hakutoiminto */
+document.getElementById("jobSearch").addEventListener("input", function () {
+    const q = this.value.toLowerCase();
+
+    document.querySelectorAll(".job-section:visible .job-card").forEach(card => {
+        const keywords = card.getAttribute("data-keywords");
+        card.style.display = keywords.includes(q) ? "block" : "none";
+    });
+});
+</script>
+
+</body>
+</html>

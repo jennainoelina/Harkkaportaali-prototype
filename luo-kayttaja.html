@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Luo käyttäjä – Harkkaportaali</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Harkkaportaali</div>
+        <ul>
+            <li><a href="index.html">ETUSIVU</a></li>
+            <li><a href="ilmoitukset.html">ILMOITUKSET</a></li>
+            <li><a href="palaute.html">PALAUTE</a></li>
+            <li><a href="tietoa.html">TIETOA</a></li>
+            <li><a href="kirjaudu.html" class="login-btn">KIRJAUDU</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<section class="login-section">
+
+    <div class="login-box">
+
+        <h2>Luo käyttäjä</h2>
+        <p>Valitse ensin käyttäjätyyppi.</p>
+
+        <!-- Valintanapit -->
+        <div class="user-type-buttons">
+            <button class="user-type-btn" data-type="opiskelija">Olen opiskelija</button>
+            <button class="user-type-btn" data-type="yritys">Olen yritys</button>
+        </div>
+
+        <!-- Lomake -->
+        <form class="login-form" id="registerForm" style="display:none; margin-top:25px;">
+
+            <h3 id="formTitle"></h3>
+
+            <label for="name">Nimi</label>
+            <input type="text" id="name" placeholder="Etunimi Sukunimi" required>
+
+            <label for="email">Sähköposti</label>
+            <input type="email" id="email" placeholder="esimerkki@posti.fi" required>
+
+            <label for="password">Salasana</label>
+            <input type="password" id="password" placeholder="Salasana" required>
+
+            <label for="password2">Toista salasana</label>
+            <input type="password" id="password2" placeholder="Toista salasana" required>
+
+            <!-- Opiskelijan taidot -->
+            <div id="skillsField" style="display:none;">
+                <label for="skills">Taidot</label>
+                <input type="text" id="skills" placeholder="Esim. HTML, CSS, asiakaspalvelu, projektityö">
+            </div>
+
+            <!-- Yrityksen lisäkenttä -->
+            <div id="companyField" style="display:none;">
+                <label for="company">Yrityksen nimi</label>
+                <input type="text" id="company" placeholder="Yrityksen nimi">
+            </div>
+
+            <button type="submit" class="login-submit">Luo käyttäjä</button>
+        </form>
+
+        <p class="register-text">
+            Onko sinulla jo tili? <a href="kirjaudu.html">Kirjaudu sisään</a>
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Harkkaportaali – Konseptiprototyyppi</p>
+</footer>
+
+<script>
+// Valinta ja lomakkeen näyttäminen
+document.querySelectorAll(".user-type-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+        const type = this.getAttribute("data-type");
+        const form = document.getElementById("registerForm");
+        const title = document.getElementById("formTitle");
+        const companyField = document.getElementById("companyField");
+        const skillsField = document.getElementById("skillsField");
+
+        form.style.display = "flex";
+
+        if (type === "opiskelija") {
+            title.textContent = "Opiskelijan tiedot";
+            companyField.style.display = "none";
+            skillsField.style.display = "block";
+        } else {
+            title.textContent = "Yrityksen tiedot";
+            companyField.style.display = "block";
+            skillsField.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

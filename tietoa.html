@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Harkkaportaali – Tietoa</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Harkkaportaali</div>
+        <ul>
+            <li><a href="index.html">ETUSIVU</a></li>
+            <li><a href="ilmoitukset.html">ILMOITUKSET</a></li>
+            <li><a href="palaute.html">PALAUTE</a></li>
+            <li><a href="tietoa.html">TIETOA</a></li>
+            <li><a href="kirjaudu.html" class="login-btn">KIRJAUDU</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+
+    <section id="info">
+
+        <h2>Tietoa palvelusta</h2>
+        <p>Valitse aihe vasemmalta nähdäksesi tarkemmat tiedot.</p>
+
+        <div style="display:flex; gap:30px; margin-top:30px;">
+
+            <!-- Aihelista -->
+            <div id="topicList" style="width:250px; display:flex; flex-direction:column; gap:15px;">
+
+                <button class="topic-btn active" data-topic="yleista">Yleistä tietoa</button>
+                <button class="topic-btn" data-topic="vinkit-opiskelijoille">Vinkkejä opiskelijoille</button>
+                <button class="topic-btn" data-topic="vinkit-tyonantajille">Vinkkejä työnantajille</button>
+
+            </div>
+
+            <!-- Sisältöalue -->
+            <div id="topicContent" style="flex:1;">
+                <div id="contentBox">
+                    <h3>Yleistä tietoa</h3>
+
+                    <h3>Mikä Harkkaportaali on?</h3>
+                    <p>
+                        Harkkaportaali on konseptipalvelu, jonka tavoitteena on helpottaa harjoittelupaikan
+                        löytämistä ja parantaa opiskelijoiden sekä yritysten välistä viestintää.
+                        Palvelu kokoaa yhteen harjoitteluilmoitukset, opiskelijoiden profiilit ja palautteet.
+                    </p>
+
+                    <h3>Kenelle palvelu on suunnattu?</h3>
+                    <p>Palvelu on suunnattu erityisesti:</p>
+                    <ul>
+                        <li>opiskelijoille, jotka etsivät harjoittelupaikkaa</li>
+                        <li>yrityksille, jotka haluavat löytää motivoituneita harjoittelijoita</li>
+                        <li>oppilaitoksille, jotka seuraavat harjoitteluprosessia</li>
+                    </ul>
+
+                    <h3>Miksi palvelu on tehty?</h3>
+                    <p>
+                        Harjoittelupaikan löytäminen voi olla haastavaa, ja yrityksillä voi olla vaikeuksia
+                        löytää sopivia harjoittelijoita. Harkkaportaali ratkaisee tämän tuomalla kaiken yhteen paikkaan:
+                    </p>
+                    <ul>
+                        <li>selkeä ilmoitusalusta harjoittelupaikoille</li>
+                        <li>opiskelijoiden osaamiset näkyville</li>
+                        <li>palautteet harjoittelujaksoista avoimesti esille</li>
+                        <li>yksinkertainen ja helppo käyttöliittymä</li>
+                    </ul>
+
+                    <h3>Tavoitteet</h3>
+                    <p>
+                        Palvelun tavoitteena on tehdä harjoitteluprosessista sujuvampi, läpinäkyvämpi ja
+                        tehokkaampi kaikille osapuolille. Harkkaportaali pyrkii tukemaan opiskelijoiden
+                        urapolkuja ja yritysten rekrytointia.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Harkkaportaali – Konseptiprototyyppi</p>
+</footer>
+
+<script>
+/* Sisältödata */
+const topics = {
+    yleista: `
+        <h3>Yleistä tietoa</h3>
+
+        <h3>Mikä Harkkaportaali on?</h3>
+        <p>
+            Harkkaportaali on konseptipalvelu, jonka tavoitteena on helpottaa harjoittelupaikan
+            löytämistä ja parantaa opiskelijoiden sekä yritysten välistä viestintää.
+            Palvelu kokoaa yhteen harjoitteluilmoitukset, opiskelijoiden profiilit ja palautteet.
+        </p>
+
+        <h3>Kenelle palvelu on suunnattu?</h3>
+        <p>Palvelu on suunnattu erityisesti:</p>
+        <ul>
+            <li>opiskelijoille, jotka etsivät harjoittelupaikkaa</li>
+            <li>yrityksille, jotka haluavat löytää motivoituneita harjoittelijoita</li>
+            <li>oppilaitoksille, jotka seuraavat harjoitteluprosessia</li>
+        </ul>
+
+        <h3>Miksi palvelu on tehty?</h3>
+        <p>
+            Harjoittelupaikan löytäminen voi olla haastavaa, ja yrityksillä voi olla vaikeuksia
+            löytää sopivia harjoittelijoita. Harkkaportaali ratkaisee tämän tuomalla kaiken yhteen paikkaan:
+        </p>
+        <ul>
+            <li>selkeä ilmoitusalusta harjoittelupaikoille</li>
+            <li>opiskelijoiden osaamiset näkyville</li>
+            <li>palautteet harjoittelujaksoista avoimesti esille</li>
+            <li>yksinkertainen ja helppo käyttöliittymä</li>
+        </ul>
+
+        <h3>Tavoitteet</h3>
+        <p>
+            Palvelun tavoitteena on tehdä harjoitteluprosessista sujuvampi, läpinäkyvämpi ja
+            tehokkaampi kaikille osapuolille. Harkkaportaali pyrkii tukemaan opiskelijoiden
+            urapolkuja ja yritysten rekrytointia.
+        </p>
+    `,
+
+    "vinkit-opiskelijoille": `
+        <h3>Vinkkejä opiskelijoille</h3>
+        <ul>
+            <li>Pidä CV ja portfolio ajan tasalla</li>
+            <li>Korosta konkreettisia taitoja ja projekteja</li>
+            <li>Ole aktiivinen ja ota yhteyttä yrityksiin rohkeasti</li>
+            <li>Valmistaudu haastatteluihin etukäteen</li>
+            <li>Pyydä palautetta harjoittelun jälkeen — se auttaa kehittymään</li>
+        </ul>
+
+        <h3>Mitä työnantajat haluavat nähdä profiilissa?</h3>
+        <ul>
+            <li><strong>Selkeä esittely itsestäsi</strong> — kuka olet, mitä opiskelet ja mitä tavoittelet</li>
+            <li><strong>Osaamiset ja taidot</strong> — ohjelmistot, työkalut, kielet, tekniset taidot</li>
+            <li><strong>Käytännön projektit</strong> — kouluprojektit, omat projektit, vapaaehtoistyöt</li>
+            <li><strong>Mitä haet harjoittelulta tai opparilta</strong> — kerro lyhyesti mitä haluat oppia tai millaisiin tehtäviin haluat päästä</li>
+            <li><strong>Motivaatio</strong> — miksi haet harjoittelua</li>
+            <li><strong>Luotettavuus</strong> — siisti profiili, oikeinkirjoitus, selkeä rakenne</li>
+            <li><strong>Suosittelut</strong> — opettajan tai aiemman työnantajan kommentti</li>
+            <li><strong>Ajantasaiset yhteystiedot</strong> — työnantaja ei jaksa etsiä niitä</li>
+        </ul>
+    `,
+
+    "vinkit-tyonantajille": `
+        <h3>Vinkkejä työnantajille</h3>
+        <ul>
+            <li>Tarjoa selkeä perehdytys harjoittelun alkuun</li>
+            <li>Anna opiskelijalle sopivasti vastuuta ja tukea</li>
+            <li>Pidä viestintä avoimena ja säännöllisenä</li>
+            <li>Anna palautetta harjoittelun aikana, ei vain lopussa</li>
+            <li>Hyödynnä harjoittelua rekrytointikanavana</li>
+            <li><strong>Pidä hakijoita ajantasalla hakuprosessin etenemisestä ja päättymisestä</strong></li>
+        </ul>
+
+        <h3>Mitä opiskelijat haluavat nähdä ilmoituksessa?</h3>
+        <ul>
+            <li><strong>Selkeä kuvaus tehtävistä</strong> — mitä harjoittelija pääsee oikeasti tekemään</li>
+            <li><strong>Mitä taitoja opiskelijalla toivotaan olevan</strong> — konkreettisia taitoja (esim. ohjelmistokielet)</li>
+            <li><strong>Mitä pääsee oppimaan</strong> — konkreettiset taidot, ohjelmistot tai vastuualueet</li>
+            <li><strong>Tuki ja ohjaus</strong> — kuka ohjaa, miten perehdytys toimii</li>
+            <li><strong>Työympäristö</strong> — tiimi, työskentelytavat, mahdollinen hybridityö</li>
+            <li><strong>Aikataulu ja kesto</strong> — milloin harjoittelu alkaa ja kuinka pitkä se on</li>
+            <li><strong>Palkkaus tai kulukorvaukset</strong> — opiskelijat arvostavat avoimuutta</li>
+        </ul>
+    `
+};
+
+/* Aihepainikkeiden toiminta */
+document.querySelectorAll(".topic-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+        document.querySelectorAll(".topic-btn").forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+
+        const topic = this.getAttribute("data-topic");
+        document.getElementById("contentBox").innerHTML = topics[topic];
+    });
+});
+</script>
+
+</body>
+</html>

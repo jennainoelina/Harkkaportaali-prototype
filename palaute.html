@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Harkkaportaali – Palaute</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Harkkaportaali</div>
+        <ul>
+            <li><a href="index.html">ETUSIVU</a></li>
+            <li><a href="ilmoitukset.html">ILMOITUKSET</a></li>
+            <li><a href="palaute.html">PALAUTE</a></li>
+            <li><a href="tietoa.html">TIETOA</a></li>
+            <li><a href="kirjaudu.html" class="login-btn">KIRJAUDU</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section id="feedback">
+        <h2>Palaute yrityksistä</h2>
+        <p>
+            Valitse yritys nähdäksesi opiskelijoiden antamat palautteet.
+        </p>
+
+        <!-- Hakukenttä -->
+        <div class="job-search">
+            <input type="text" id="companySearch" placeholder="Hae yritystä nimellä...">
+        </div>
+
+        <!-- YRITYSLISTA -->
+        <div id="companyList" class="job-section">
+
+            <div class="job-card company-card" data-company="luova" data-keywords="luova studio oy markkinointi">
+                <h3>Luova Studio Oy</h3>
+            </div>
+
+            <div class="job-card company-card" data-company="techbridge" data-keywords="techbridge solutions ohjelmistokehitys">
+                <h3>TechBridge Solutions</h3>
+            </div>
+
+            <div class="job-card company-card" data-company="kaupunki" data-keywords="kaupunki services taloushallinto">
+                <h3>Kaupunki Services</h3>
+            </div>
+
+        </div>
+
+        <!-- PALAUTEALUE (piilotettu aluksi) -->
+        <div id="feedbackDetails" class="job-section" style="display:none;">
+            <button id="backToList" class="active" style="margin-bottom:20px;">← Takaisin yrityslistaan</button>
+            <div id="feedbackContent"></div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Harkkaportaali – Konseptiprototyyppi</p>
+</footer>
+
+<script>
+/* Hakukenttä yrityslistalle */
+document.getElementById("companySearch").addEventListener("input", function () {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll(".company-card").forEach(card => {
+        const keywords = card.getAttribute("data-keywords");
+        card.style.display = keywords.includes(q) ? "block" : "none";
+    });
+});
+
+/* Yritysten palautedata */
+const feedbackData = {
+    luova: `
+        <h3>Luova Studio Oy – palautteet</h3>
+        <div class="job-card">
+            <p><strong>Opiskelija:</strong> Aino Laine</p>
+            <p><strong>Arvosana:</strong> ★★★★☆</p>
+            <h4>Palaute</h4>
+            <p>Tiimi oli kannustava ja sain vastuuta heti alussa. Opin paljon kampanjoiden suunnittelusta.</p>
+        </div>
+    `,
+    techbridge: `
+        <h3>TechBridge Solutions – palautteet</h3>
+        <div class="job-card">
+            <p><strong>Opiskelija:</strong> Leo Mäkinen</p>
+            <p><strong>Arvosana:</strong> ★★★★★</p>
+            <h4>Palaute</h4>
+            <p>Erittäin opettavainen harjoittelu! Pääsin mukaan oikeisiin projekteihin ja sain tukea kehittäjiltä.</p>
+        </div>
+    `,
+    kaupunki: `
+        <h3>Kaupunki Services – palautteet</h3>
+        <div class="job-card">
+            <p><strong>Opiskelija:</strong> Sara Virtanen</p>
+            <p><strong>Arvosana:</strong> ★★★☆☆</p>
+            <h4>Palaute</h4>
+            <p>Opin paljon, mutta olisin toivonut enemmän ohjausta alkuvaiheessa.</p>
+        </div>
+    `
+};
+
+/* Yrityksen klikkaus → näytä palautteet */
+document.querySelectorAll(".company-card").forEach(card => {
+    card.addEventListener("click", function () {
+        const company = this.getAttribute("data-company");
+
+        document.getElementById("companyList").style.display = "none";
+        document.getElementById("feedbackDetails").style.display = "block";
+
+        document.getElementById("feedbackContent").innerHTML = feedbackData[company];
+    });
+});
+
+/* Takaisin yrityslistaan */
+document.getElementById("backToList").addEventListener("click", function () {
+    document.getElementById("feedbackDetails").style.display = "none";
+    document.getElementById("companyList").style.display = "block";
+});
+</script>
+
+</body>
+</html>
