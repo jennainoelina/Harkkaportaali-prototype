@@ -62,9 +62,42 @@
 
 </main>
 
-<footer>
-    <p>© 2026 Harkkaportaali – Konseptiprototyyppi</p>
-</footer>
+    <footer>
+        <div class="footer-center">
+            <div class="footer-links">
+                <a href="./profiilinäkymä-o.html">Opiskelijanäkymä</a>
+                <a href="./profiilinäkymä-y.html">Yritysnäkymä</a>
+            </div>
+
+            <div class="language-select">
+                <label for="lang">Kieli:</label>
+                <select id="lang">
+                    <option value="fi">Suomi</option>
+                    <option value="en">English</option>
+                    <option value="sv">Svenska</option>
+                </select>
+            </div>
+        </div>
+
+        <p>© 2026 Harkkaportaali – Konseptiprototyyppi</p>
+    </footer>
+
+
+
+    <script>
+    const langSelect = document.getElementById("lang");
+
+    // Lataa tallennettu kieli
+    const savedLang = localStorage.getItem("language");
+    if (savedLang) {
+        langSelect.value = savedLang;
+    }
+
+    // Tallenna valinta
+    langSelect.addEventListener("change", () => {
+        localStorage.setItem("language", langSelect.value);
+    });
+</script>
 
 <script>
 /* Hakukenttä yrityslistalle */

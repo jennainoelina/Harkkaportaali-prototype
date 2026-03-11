@@ -505,3 +505,94 @@ nav ul li a.login-btn:hover {
 .job-search input {
     flex: 1; /* hakukenttä venyy, valikko pysyy siistinä */
 }
+
+.language-select {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.language-select select {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* väli linkkien ja kielivalinnan väliin */
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px; /* linkkien väli */
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.language-select {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.language-select select {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #24396e;
+}
+
+#links ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+#links li {
+    margin-bottom: 10px;
+}
+
+#links a {
+    color: #60a5fa;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+#links a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+.profile-card {
+    position: relative;
+}
+
+.edit-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #3b82f6;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
