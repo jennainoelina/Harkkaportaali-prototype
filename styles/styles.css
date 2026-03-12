@@ -596,3 +596,80 @@ footer {
     cursor: pointer;
     transition: 0.25s ease;
 }
+
+/* ------------------------------
+   SUOSIKIT – FAVOURITES FEATURE
+------------------------------ */
+
+.favorites-side {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.favorites-side h3 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #93c5fd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Tähti-ikoni otsikkoon */
+.favorites-side h3::before {
+    content: "★";
+    color: #facc15; /* kultainen */
+    font-size: 22px;
+}
+
+/* Lista */
+.favorites-side ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Yksittäinen suosikkikortti */
+.favorites-side li {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.25s ease;
+}
+
+/* Hover-efekti */
+.favorites-side li:hover {
+    border-color: #60a5fa;
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.25);
+}
+
+/* Pieni tähti jokaisen kohteen oikealle puolelle */
+.favorites-side li::after {
+    content: "★";
+    color: #facc15;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Logo-kuva navissa */
+.logo-img {
+    height: 100px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 0 4px rgba(96,165,250,0.4));
+    transition: 0.25s ease;
+}
